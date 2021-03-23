@@ -5,10 +5,10 @@ import java.util.Map;
 
 public class fileRead {
     public static void main(String args[]){
-        File file = new File("F:\\Ñ§Ï°\\ÏîÄ¿\\Êı¾İ½á¹¹ÊµÀı\\src\\com\\company\\IO\\File\\readTest.txt");
+        File file = new File("F:\\å­¦ä¹ \\é¡¹ç›®\\æ•°æ®ç»“æ„å®ä¾‹\\src\\com\\company\\IO\\File\\readTest.txt");
         if (file.exists()){
-            System.out.println("¶ÁÈ¡³É¹¦");
-            //ÎÄ¼ş¶ÁĞ´¶ÔÏó
+            System.out.println("è¯»å–æˆåŠŸ");
+            //æ–‡ä»¶è¯»å†™å¯¹è±¡
             try {
                 BufferedReader reader = new BufferedReader(new FileReader(file));
                 int seq = 0;
@@ -16,37 +16,20 @@ public class fileRead {
                     seq++;
                     String line = reader.readLine();
                     if (line!=null){
-                        Map dataMap = new HashMap();
-                        System.out.println("483536******8027:"+line.indexOf("483536******8027"));
-                        String queryId= line.substring(87,109).trim();//²éÑ¯Á÷Ë®ºÅ
-                        String orderId= line.substring(112,145).trim();//ÉÌ»§¶©µ¥ºÅ
-                        String txnAmt = line.substring(66,79).trim();//½»Ò×½ğ¶î
-                        String txnTime = line.substring(35,46).trim();
-                        String acc = line.substring(46,65).trim();
-                        String tradeTime = "";
-                        if(null!=txnTime&&!"".equals(txnTime)){
-                            tradeTime = txnTime.substring(4,10).trim().replace(":", "");
-                        }
-                        String txnType = line.substring(215, 217);//½»Ò×ÀàĞÍ
-                        dataMap.put("queryId",queryId);
-                        dataMap.put("orderId",orderId);
-                        dataMap.put("txnAmt",txnAmt);
-                        dataMap.put("txnTime",txnTime);
-                        dataMap.put("tradeTime",tradeTime);
-                        dataMap.put("txnType",txnType);
-                        dataMap.put("acc",acc);
-                        System.out.println(dataMap);
+                       // ...
+                       // æ–‡ä»¶è§£æ
+                       // ...
                     }else if(line==null){
-                        //Èç¹ûlineÊÇnullÔòËµÃ÷ÎÄ¼şÒÑ¾­¶ÁÍêÁË£¬·ñÔò¾ÍÃ»ÓĞ¶ÁÍê£¬ËùÒÔÍÆ³öÑ­»·
+                        //å¦‚æœlineæ˜¯nullåˆ™è¯´æ˜æ–‡ä»¶å·²ç»è¯»å®Œäº†ï¼Œå¦åˆ™å°±æ²¡æœ‰è¯»å®Œï¼Œæ‰€ä»¥æ¨å‡ºå¾ªç¯
                         break;
                     }
                 }
-                System.out.println("¹²Ñ­»·"+seq+"´Î");
+                System.out.println("å…±å¾ªç¯"+seq+"æ¬¡");
             } catch (FileNotFoundException e) {
-                System.out.println("ÎÄ¼şÕÒÑ°Ê§°Ü");
+                System.out.println("æ–‡ä»¶æ‰¾å¯»å¤±è´¥");
                 e.printStackTrace();
             } catch (IOException e) {
-                System.out.println("ÎÄ¼ş¶ÁÈ¡Ê§°Ü");
+                System.out.println("æ–‡ä»¶è¯»å–å¤±è´¥");
                 e.printStackTrace();
             }
         }
