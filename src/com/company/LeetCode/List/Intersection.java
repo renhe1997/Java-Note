@@ -19,8 +19,8 @@ public class Intersection {
         NodeData A = nodeA;
         NodeData B = nodeB;
         // 相差节点数，定位到相同节点数
-        int step = A.length()-B.length();
-        if (A.length()-B.length()>0){
+        int step = A.length(A)-B.length(B);
+        if (A.length(A)-B.length(B)>0){
             while(step==0){
                 step--;
                 nodeA=nodeA.getNextNode();

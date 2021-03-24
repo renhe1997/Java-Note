@@ -5,7 +5,7 @@ package com.company.LeetCode.BaseData;
  * @Author: RenHe
  * @Date: 2021/3/22 14:30
  */
-public class NodeData {
+public class NodeData implements Cloneable{
     private int data;
     private NodeData nextNode;
 
@@ -23,6 +23,21 @@ public class NodeData {
 
     public void setNextNode(NodeData nextNode) {
         this.nextNode = nextNode;
+    }
+
+    @Override
+    /**
+     * 浅克隆，被复制对象的所有变量都含有与原来的对象相同的值，而所有的对其他对象的引用仍然指向原来的对象。
+     * 换言之，浅复制仅仅复制所考虑的对象，而不复制它所引用的对象。
+     */
+    public NodeData clone() {
+        NodeData nodeData = null;
+        try {
+            nodeData = (NodeData) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return nodeData;
     }
 
     public NodeData(int data){
@@ -63,12 +78,11 @@ public class NodeData {
         return sb.toString().substring(0,sb.length()-1);
     }
 
-    public int length(){
+    public int length(NodeData node){
         int length = 1;
-        NodeData node = new NodeData();
-        while (null != this.getNextNode()){
+        while (null != node.getNextNode()){
             length++;
-           node = this.getNextNode();
+           node = node.getNextNode();
         }
         return length;
     }
