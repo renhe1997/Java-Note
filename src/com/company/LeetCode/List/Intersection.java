@@ -2,8 +2,10 @@ package com.company.LeetCode.List;
 
 import com.company.LeetCode.BaseData.NodeData;
 
+import java.util.Stack;
+
 /**
- * 链表相交
+ * 单链表相交
  * @Author: RenHe
  * @Date: 2021/3/18 20:25
  */
@@ -89,24 +91,28 @@ public class Intersection {
         }
         return isLoop;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public static int getIntersection3(NodeData A,NodeData B){
+        int temp = 0;  //存第一个相交节点
+        Stack<Integer> stack1 = new Stack();
+        while (A.getNextNode()!=null){
+            stack1.push(A.getData());
+        }
+        while (B.getNextNode()!=null){
+            stack1.push(B.getData());
+        }
+        Stack<Integer> stack2 = new Stack();
+        while(!stack1.empty()&&!stack1.empty())  //两栈不为空
+        {
+            temp=stack1.peek();
+            if(temp==stack2.peek()){
+                stack1.pop();
+                stack2.pop();
+            }else{
+                break;
+            }
+        }
+        return 0;
+    }
 
 
     public static void main(String[] args) {
@@ -124,8 +130,8 @@ public class Intersection {
         B2.setNextNode(B3);
 //        B3.setNextNode(B);// 首尾相连，循环
         System.out.println(B.toStingData(B));
-        System.out.println("该链表是为否带环链表"+isLoop(B));
-        System.out.println("相交节点数据为："+getIntersection2(A,B));
+        //System.out.println("该链表是为否带环链表"+isLoop(B));
+        System.out.println("相交节点数据为："+getIntersection3(A,B));
 
     }
 

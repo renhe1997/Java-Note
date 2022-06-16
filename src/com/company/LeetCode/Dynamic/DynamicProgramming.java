@@ -1,4 +1,4 @@
-package com.company.LeetCode;
+package com.company.LeetCode.Dynamic;
 
 /**
  * @Author: RenHe
@@ -12,7 +12,8 @@ package com.company.LeetCode;
  */
 public class DynamicProgramming {
     /**
-     *  * 一个楼梯有 10 级台阶，你从下往上走，每跨一步只能向上迈 1 级或者 2 级台阶，请问一共有多少种走法
+     *  * 一个楼梯有 10 级台阶，你从下往上走，每跨一步只能向上迈 1 级或者 2 级台阶
+     *  请问一共有多少种走法
      *  * result 89
      * @param n
      * @return
@@ -56,28 +57,6 @@ public class DynamicProgramming {
 
         return 0;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public static void main(String[] args) {
         int step = new DynamicProgramming().getStep(10);

@@ -1,8 +1,9 @@
-package com.company.LeetCode;
+package com.company.LeetCode.Other;
 
 import java.util.HashMap;
 
 /**
+ * 最近最少使用-淘汰策略
  * @Author: RenHe
  * @Date: 2020/12/28 19:16
  */
