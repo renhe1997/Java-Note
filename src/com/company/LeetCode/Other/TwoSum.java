@@ -1,5 +1,6 @@
 package com.company.LeetCode.Other;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,8 +13,26 @@ public class TwoSum {
     public static void main(String[] args) {
         int[] f = {1,3,5,6,2};
         int targetNum = 8;
-        System.out.println(getTwoSum(f,targetNum).toString());
+        System.out.println(Arrays.toString(twoSum(f,targetNum)));
+//        System.out.println(getTwoSum(f,targetNum).toString());
     }
+    public static int[] twoSum(int[] numbers, int target) {
+        int first = 0;
+        int second = numbers.length-1;
+        while(first<second){
+            if((numbers[first]+numbers[second])<target){
+                first++;
+            }else if((numbers[first]+numbers[second])>target){
+                second--;
+            }else{
+                break;
+            }
+        }
+        return new int[]{first,second};
+    }
+
+
+
     public static Map getTwoSum(int[] f, int targetNum){
         // ｛数，和-数的差｝
         Map dataMap  = new HashMap();
